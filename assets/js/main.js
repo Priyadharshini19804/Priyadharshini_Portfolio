@@ -64,8 +64,8 @@ sr.reveal('.contact__input',{interval: 200});
 
 function sendEmail(event) {
     event.preventDefault(); // Prevent the default form submission
-    const serviceID = "YOUR_SERVICE_ID"; // Replace with your EmailJS service ID
-    const templateID = "YOUR_TEMPLATE_ID"; // Replace with your EmailJS template ID
+    const serviceID = "priya-19084"; // Replace with your EmailJS service ID
+    const templateID = "template_priya"; // Replace with your EmailJS template ID
 
     const form = document.getElementById("contact-form");
     emailjs.sendForm(serviceID, templateID, form)
