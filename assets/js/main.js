@@ -33,6 +33,10 @@ const sr = ScrollReveal({
     reset: true
 });
 
+/*===== CONTACT EMAIL FEED =====*/
+emailjs.init("VVDNIisrW7zhGr75n"); // Replace with your EmailJS public key
+
+
 /*SCROLL HOME*/
 sr.reveal('.home__title',{}); 
 sr.reveal('.button',{delay: 200}); 
@@ -56,6 +60,23 @@ sr.reveal('.work__img',{interval: 200});
 /*SCROLL CONTACT*/
 sr.reveal('.contact__input',{interval: 200}); 
 
+/*===== Add a function to handle form submission =====*/
 
+function sendEmail(event) {
+    event.preventDefault(); // Prevent the default form submission
+    const serviceID = "YOUR_SERVICE_ID"; // Replace with your EmailJS service ID
+    const templateID = "YOUR_TEMPLATE_ID"; // Replace with your EmailJS template ID
+
+    const form = document.getElementById("contact-form");
+    emailjs.sendForm(serviceID, templateID, form)
+        .then(() => {
+            alert("Message sent successfully!");
+            form.reset(); // Reset the form after submission
+        })
+        .catch((error) => {
+            alert("Failed to send the message. Please try again later.");
+            console.error("Error:", error);
+        });
+}
 
 
