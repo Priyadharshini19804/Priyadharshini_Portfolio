@@ -48,8 +48,8 @@ Hi there! 👋 I'm Priyadharshini S M, a passionate fresher excited to embark on
 
 ## 📬 Connect With Me
 
-- 🌐 [Portfolio](https://portfolio-site-eight-red.vercel.app/)  
-- 💼 [LinkedIn](https://www.linkedin.com/in/priya-dharshini-19p082004/)  
+- 🌐 [Portfolio](https://priyadharshinism-portfolio.vercel.app/)  
+- 💼 [LinkedIn](https://www.linkedin.com/in/priyadharshinism08/)  
 - 🐦 [Twitter](https://x.com/priya19082004)  
 - 📧 Email: shreesakthi2004@gmail.com  
 
