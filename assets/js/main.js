@@ -33,9 +33,36 @@ const sr = ScrollReveal({
     reset: true
 });
 
-/*===== CONTACT EMAIL FEED =====*/
-emailjs.init("VVDNIisrW7zhGr75n"); // Replace with your EmailJS public key
+// Initialize EmailJS
+emailjs.init("VVDNIisrW7zhGr75n"); // Replace with your actual User ID
 
+// Form submission handler
+document.getElementById('contact-form').addEventListener('submit', function(event) {
+    event.preventDefault(); // Prevent the default form submission
+
+    // Collect form data
+    const name = document.getElementById('user_name').value;
+    const email = document.getElementById('user_email').value;
+    const message = document.getElementById('message').value;
+
+    // Prepare the email parameters
+    const emailParams = {
+        from_name: name,
+        from_email: email,
+        message: message,
+    };
+
+    // Send email using EmailJS
+    emailjs.send("priya-19084", "template_priya", emailParams)
+        .then((response) => {
+            alert("Email sent successfully!");
+            console.log("SUCCESS!", response.status, response.text);
+        })
+        .catch((error) => {
+            alert("Failed to send email. Please try again.");
+            console.error("FAILED...", error);
+        });
+});
 
 /*SCROLL HOME*/
 sr.reveal('.home__title',{}); 
@@ -60,23 +87,5 @@ sr.reveal('.work__img',{interval: 200});
 /*SCROLL CONTACT*/
 sr.reveal('.contact__input',{interval: 200}); 
 
-/*===== Add a function to handle form submission =====*/
-
-function sendEmail(event) {
-    event.preventDefault(); // Prevent the default form submission
-    const serviceID = "priya-19084"; // Replace with your EmailJS service ID
-    const templateID = "template_priya"; // Replace with your EmailJS template ID
-
-    const form = document.getElementById("contact-form");
-    emailjs.sendForm(serviceID, templateID, form)
-        .then(() => {
-            alert("Message sent successfully!");
-            form.reset(); // Reset the form after submission
-        })
-        .catch((error) => {
-            alert("Failed to send the message. Please try again later.");
-            console.error("Error:", error);
-        });
-}
 
 
